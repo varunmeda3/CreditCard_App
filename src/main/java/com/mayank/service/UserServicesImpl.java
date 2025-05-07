@@ -163,22 +163,5 @@ public class UserServicesImpl implements UserService {
 		return presentDateTime;
 	}
 
-	private String sentBillToString() throws TransactionException {
-
-		StringBuilder sb = new StringBuilder();
-
-		if (transactions.isEmpty())
-			throw new TransactionException("No Transactions Found ");
-
-		for (Transaction t : transactions) {
-			sb.append(t.getTimestamp() + "\t");
-			sb.append(t.getTransactionType() + "\t");
-			sb.append(t.getAmount() + "\t");
-			sb.append("\n");
-		}
-
-		return sb.toString();
-
-	}
 
 }
